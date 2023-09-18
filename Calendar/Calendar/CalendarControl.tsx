@@ -614,8 +614,8 @@ function getCurrentRange(date: Date, view: string, culture: string) : {start: Da
 
     let start = moment().toDate(), end = moment().toDate();
     if(view === 'day'){
-      start = moment(date).startOf('day').toDate();
-      end   = moment(date).endOf('day').toDate();
+      start = moment(date).startOf('day').hour(6).toDate();
+      end   = moment(date).add(1, 'days').startOf('day').hour(6).toDate();
     }
     else if(view === 'week'){
       start = moment(date).startOf('week').toDate();
